@@ -1,0 +1,97 @@
+/* =========================================================================
+   BhoomiShakti — language selector + regional-language support
+   Loaded by js/bhoomishakti-language.js. English pages look exactly as before:
+   every regional rule below is scoped to html[data-bsl-lang] ≠ "en".
+   ========================================================================= */
+
+/* ---------- Regional fonts (self-hosted, SIL OFL 1.1 — see assets/fonts/indic/OFL.txt).
+   Each family is used only by its own language, so a page downloads one font at most. */
+@font-face { font-family: "BSL Devanagari"; src: url("../assets/fonts/indic/noto-sans-devanagari.woff2") format("woff2"); font-weight: 100 900; font-display: swap; unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF; }
+@font-face { font-family: "BSL Kannada"; src: url("../assets/fonts/indic/noto-sans-kannada.woff2") format("woff2"); font-weight: 100 900; font-display: swap; unicode-range: U+0951-0952, U+0964-0965, U+0C80-0CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC; }
+@font-face { font-family: "BSL Tamil"; src: url("../assets/fonts/indic/noto-sans-tamil.woff2") format("woff2"); font-weight: 100 900; font-display: swap; unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC; }
+@font-face { font-family: "BSL Telugu"; src: url("../assets/fonts/indic/noto-sans-telugu.woff2") format("woff2"); font-weight: 100 900; font-display: swap; unicode-range: U+0951-0952, U+0964-0965, U+0C00-0C7F, U+1CDA, U+1CF2, U+200C-200D, U+25CC; }
+@font-face { font-family: "BSL Malayalam"; src: url("../assets/fonts/indic/noto-sans-malayalam.woff2") format("woff2"); font-weight: 100 900; font-display: swap; unicode-range: U+0307, U+0323, U+0951-0952, U+0964-0965, U+0D00-0D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC; }
+
+/* Latin letters keep Manrope / Fraunces; regional letters use the regional font. */
+html[data-bsl-lang="hi"], html[data-bsl-lang="mr"] { --bsl-script: "BSL Devanagari", "Nirmala UI", "Mangal", "Kohinoor Devanagari"; }
+html[data-bsl-lang="kn"] { --bsl-script: "BSL Kannada", "Nirmala UI", "Tunga", "Kannada Sangam MN"; }
+html[data-bsl-lang="ta"] { --bsl-script: "BSL Tamil", "Nirmala UI", "Latha", "Tamil Sangam MN"; }
+html[data-bsl-lang="te"] { --bsl-script: "BSL Telugu", "Nirmala UI", "Gautami", "Telugu Sangam MN"; }
+html[data-bsl-lang="ml"] { --bsl-script: "BSL Malayalam", "Nirmala UI", "Kartika", "Malayalam Sangam MN"; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) {
+  --font-body: "Manrope", var(--bsl-script), "Segoe UI", system-ui, sans-serif;
+  --font-display: "Fraunces", var(--bsl-script), Georgia, serif;
+}
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .qc { --font-body: "Manrope", var(--bsl-script), system-ui, sans-serif; }
+
+/* Regional scripts need a little more line height and must be allowed to wrap. */
+html[data-bsl-lang]:not([data-bsl-lang="en"]) body { line-height: 1.75; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) h1, html[data-bsl-lang]:not([data-bsl-lang="en"]) h2,
+html[data-bsl-lang]:not([data-bsl-lang="en"]) h3, html[data-bsl-lang]:not([data-bsl-lang="en"]) h4,
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .p-title { line-height: 1.32; letter-spacing: 0; overflow-wrap: anywhere; }
+/* brand titles stay in Latin letters, so they keep their original tight setting */
+html[data-bsl-lang]:not([data-bsl-lang="en"]) h1.hero-title, html[data-bsl-lang]:not([data-bsl-lang="en"]) h1.bsd-title { line-height: .98; letter-spacing: -.025em; overflow-wrap: normal; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) h1.bsd-title { line-height: 1; letter-spacing: .02em; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) main p, html[data-bsl-lang]:not([data-bsl-lang="en"]) main li,
+html[data-bsl-lang]:not([data-bsl-lang="en"]) main dd, html[data-bsl-lang]:not([data-bsl-lang="en"]) main td { overflow-wrap: anywhere; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .btn { white-space: normal; text-align: center; line-height: 1.35; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .eyebrow, html[data-bsl-lang]:not([data-bsl-lang="en"]) .nav-link,
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .filter-btn, html[data-bsl-lang]:not([data-bsl-lang="en"]) .status,
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .f-tablist button, html[data-bsl-lang]:not([data-bsl-lang="en"]) .bsd-concept,
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .bsd-motto, html[data-bsl-lang]:not([data-bsl-lang="en"]) .fin-sub { letter-spacing: .02em; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .chip, html[data-bsl-lang]:not([data-bsl-lang="en"]) .tag-pill,
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .hero-float, html[data-bsl-lang]:not([data-bsl-lang="en"]) .hv-chip b { white-space: normal; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .qc-tip { white-space: normal; width: max-content; max-width: 240px; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .eco-node .lbl { white-space: nowrap; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) table { word-break: normal; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .subnav a { white-space: nowrap; }
+html[data-bsl-lang]:not([data-bsl-lang="en"]) .mobile-nav a.m-link { font-size: 22px; gap: 12px; }
+
+/* ---------- Header selector (compact: 🌐 EN ▾) ---------- */
+.bsl { font-family: var(--font-body, "Manrope", system-ui, sans-serif); }
+.bsl-ico { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.bsl-caret { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s; }
+.bsl-check { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; margin-left: auto; opacity: 0; flex-shrink: 0; }
+.bsl-desk { position: relative; }
+.bsl-btn { display: inline-flex; align-items: center; gap: 5px; height: 44px; padding: 0 10px 0 11px; border-radius: 999px; border: 1px solid var(--line, #E3EADF); background: #fff; color: var(--green-800, #1B4D31); font: inherit; font-size: 13px; font-weight: 800; letter-spacing: .06em; cursor: pointer; transition: background-color .2s, border-color .2s, box-shadow .2s; }
+.bsl-btn:hover, .bsl-desk.open .bsl-btn { background: var(--sage-50, #F3F7F1); border-color: var(--sage-200, #D3E2CC); }
+.bsl-btn:focus-visible, .bsl-opt:focus-visible { outline: 3px solid var(--green-600, #2C7D48); outline-offset: 2px; }
+.bsl-desk.open .bsl-caret { transform: rotate(180deg); }
+.bsl-menu { position: absolute; right: 0; top: calc(100% + 10px); z-index: 120; min-width: 220px; padding: 8px; border-radius: 18px; background: #fff; border: 1px solid var(--line, #E3EADF); box-shadow: 0 30px 60px -24px rgba(20, 58, 37, .35); display: grid; gap: 2px; animation: bsl-in .2s ease-out; }
+.bsl-menu[hidden] { display: none; }
+@keyframes bsl-in { from { opacity: 0; transform: translateY(-6px); } }
+.bsl-opt { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 44px; padding: 8px 12px; border: 0; border-radius: 12px; background: none; color: var(--ink, #16271C); font: inherit; text-align: left; cursor: pointer; }
+.bsl-opt:hover { background: var(--sage-50, #F3F7F1); }
+.bsl-opt[aria-checked="true"] { background: var(--sage-100, #E6EFE2); color: var(--green-800, #1B4D31); }
+.bsl-opt[aria-checked="true"] .bsl-check { opacity: 1; }
+.bsl-native { font-size: 16px; font-weight: 700; font-family: "Manrope", "BSL Devanagari", "BSL Kannada", "BSL Tamil", "BSL Telugu", "BSL Malayalam", "Nirmala UI", system-ui, sans-serif; }
+.bsl-en { font-size: 12.5px; color: var(--ink-muted, #6A7B6E); font-weight: 600; }
+
+/* ---------- Mobile menu selector (top of the existing panel) ---------- */
+.bsl-mob { margin: 0 0 14px; padding: 14px; border-radius: 18px; background: var(--sage-50, #F3F7F1); border: 1px solid var(--line, #E3EADF); }
+.bsl-mob-title { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--green-800, #1B4D31); }
+.bsl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.bsl-grid .bsl-opt { min-height: 52px; padding: 10px 12px; background: #fff; border: 1.5px solid var(--line, #E3EADF); border-radius: 14px; }
+.bsl-grid .bsl-opt[aria-checked="true"] { border-color: var(--green-600, #2C7D48); background: #fff; box-shadow: 0 0 0 3px rgba(44, 125, 72, .14); }
+.bsl-grid .bsl-opt .bsl-en { display: none; }
+.bsl-grid .bsl-opt:first-child { grid-column: 1 / -1; }
+
+/* Only on phones does the selector live in the menu panel alone. */
+@media (max-width: 599px) { .bsl-desk { display: none; } }
+
+/* ---------- Header room for the selector ---------- */
+@media (min-width: 1490px) { .site-header .container.nav { max-width: 1440px; } }
+/* "tight": a few pixels less padding when the selector would otherwise crowd the menu */
+html.bsl-tight .site-header .nav-link { padding-left: 7px; padding-right: 7px; }
+html.bsl-tight .bsl-btn { padding: 0 9px; }
+html.bsl-tight .bsl-caret { display: none; }
+@media (min-width: 1181px) and (max-width: 1499px) { html.bsl-tight .site-header .nav-link { padding-left: 6px; padding-right: 6px; } }
+/* "burger": use the site's existing hamburger menu when the labels do not fit */
+html.bsl-burger .site-header .nav-links { display: none; }
+html.bsl-burger .site-header .burger { display: grid; }
+
+/* While the dictionary loads, avoid a flash of half-translated text. */
+html.bsl-busy main, html.bsl-busy .site-footer { transition: opacity .15s; opacity: .55; }
+
+@media (prefers-reduced-motion: reduce) { .bsl-menu { animation: none; } .bsl-caret { transition: none; } }
+@media print { .bsl { display: none !important; } }

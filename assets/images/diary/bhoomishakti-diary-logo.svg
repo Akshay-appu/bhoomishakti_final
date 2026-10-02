@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="bsd-logo-title">
+  <title id="bsd-logo-title">BhoomiShakti Diary logo: an open diary whose pages are field rows, with a sprout rising in the morning sun</title>
+  <circle cx="60" cy="30" r="17" fill="#F6E3B4"/>
+  <path d="M60 58C45 49 25 48 7 52v46c18-3.5 38-2 53 7 15-9 35-10.5 53-7V52c-18-4-38-3-53 6Z" fill="#7A5230"/>
+  <path d="M60 52C47 43 30 41 13 45v46c17-3.5 34-1.5 47 7Z" fill="#FBFCF9" stroke="#1B4D31" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M60 52c13-9 30-11 47-7v46c-17-3.5-34-1.5-47 7Z" fill="#FBFCF9" stroke="#1B4D31" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="none" stroke="#6CB85A" stroke-width="3.2" stroke-linecap="round">
+    <path d="M20 83c13-2.5 27-1 37 5"/><path d="M20 72c13-2.5 27-1 37 5"/><path d="M20 61c13-2.5 27-1 37 5"/>
+    <path d="M100 83c-13-2.5-27-1-37 5"/><path d="M100 72c-13-2.5-27-1-37 5"/><path d="M100 61c-13-2.5-27-1-37 5"/>
+  </g>
+  <path d="M60 54V27" stroke="#2C7D48" stroke-width="3.6" stroke-linecap="round"/>
+  <path d="M60 40c-11 0-19-8-19-19 11 0 19 8 19 19Z" fill="#2C7D48"/>
+  <path d="M60 33c4-11 14-17 26-16-2 12-12 18-26 16Z" fill="#6CB85A"/>
+</svg>
