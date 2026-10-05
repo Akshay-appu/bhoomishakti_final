@@ -15,9 +15,9 @@
         See README.md → "Contact form (EmailJS)" for the template to paste.
      --------------------------------------------------------------------- */
   var EMAILJS = {
-    publicKey: 'YOUR_PUBLIC_KEY',
-    serviceId: 'YOUR_SERVICE_ID',
-    templateId: 'YOUR_TEMPLATE_ID',     // email that the BhoomiShakti team receives
+    publicKey: 'vjFqisDhlmZSDdRkC',
+    serviceId: 'service_6y0h6bj',
+    templateId: 'template_u5vsl3q',     // email that the BhoomiShakti team receives
     autoReplyTemplateId: ''             // optional: confirmation email to the sender (sent only if they give an email)
   };
 
@@ -26,10 +26,10 @@
         Example: email: 'team@yourdomain.in', phone: '+91 90000 00000'
      --------------------------------------------------------------------- */
   var CONTACT_INFO = {
-    email: '',
-    phone: '',
-    whatsapp: '',       // digits with country code, e.g. '919000000000'
-    address: ''
+    email: 'contact@bhoomishakti.in',
+    phone: '+91 9663570643',
+    whatsapp: '+91 9663570643',       // digits with country code, e.g. '919000000000'
+    address: 'Karnataka, India'              // shown in the "Direct contact" section; can be a city or full address
   };
 
   /* ---------------------------------------------------------------------
